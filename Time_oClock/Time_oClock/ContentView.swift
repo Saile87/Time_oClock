@@ -15,7 +15,7 @@ struct ContentView: View {
     
     var body: some View {
         Text("\(timeFormatter(time))")
-            .font(.system(size: 100))
+            .font(.system(size: 120))
             .foregroundColor(timeInRange(time) ? .green : .red)
             .background(colorScheme == .dark ? Color.black : Color.white)
             .onReceive(timer) { input in
