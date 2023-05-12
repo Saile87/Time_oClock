@@ -33,7 +33,7 @@ struct ContentView: View {
     func timeInRange(_ date: Date) -> Bool {
         let calendar = Calendar.current
         let hour = calendar.component(.hour, from: date)
-        return hour >= 6 && hour <= 23
+        return hour >= 6 && hour <= 22
     }
 }
 
