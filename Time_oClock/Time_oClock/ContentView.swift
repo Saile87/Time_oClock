@@ -23,18 +23,19 @@ struct ContentView: View {
             .onReceive(timer) { input in
                 self.time = input
             }
-            .onReceive(NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)) { _ in
-                screenWidth = UIScreen.main.bounds.width
-            }
+//            .onReceive(NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)) { _ in
+//                screenWidth = UIScreen.main.bounds.width
+//            }
     }
     
     func fontSize() -> CGFloat {
-        screenWidth > 500 ? 120 : 200
+        screenWidth > 500 ? 160 : 140
     }
     
     func timeFormatter(_ date: Date) -> String {
         let formatter = DateFormatter()
         formatter.timeStyle = .short
+        formatter.dateFormat = "HH:mm"
         formatter.timeZone = TimeZone.current
         return formatter.string(from: date)
     }
